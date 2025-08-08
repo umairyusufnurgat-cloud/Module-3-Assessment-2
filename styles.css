@@ -2,12 +2,10 @@
 
 /* General Styles */
 body {
-      font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom right, #fcbf49, #f77f00);
   margin: 0;
-  padding: 0;
-  background: linear-gradient(to right, #fff8f0, #f0f8ff);
-  color: #333;
-  line-height: 1.6;
+  font-family: Arial, sans-serif;
+
 }
 
 header {
@@ -390,6 +388,7 @@ footer {
 .thank-you h1 {
   animation: bounceIn 1s ease-out;
 }
+
 
 
 
