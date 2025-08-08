@@ -393,6 +393,19 @@ footer {
   text-align: center;
   margin-top: 1rem;
 }
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+.floating-food {
+  animation: float 3s ease-in-out infinite;
+  width: 100px;
+  display: block;
+  margin: 1rem auto;
+}
+
 
 
 
