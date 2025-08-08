@@ -456,23 +456,7 @@ footer {
   font-size: 1.5rem;
   margin-right: 5px;
 }
-.logo-img {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  margin-right: 0.3rem;
-}
 
-}
-.logo-img:hover {
-  transform: scale(1.1);
-  transition: transform 0.3s ease;
-}
-.logo-img {
-  margin-right: 0.5rem;
-}
 
 
 
