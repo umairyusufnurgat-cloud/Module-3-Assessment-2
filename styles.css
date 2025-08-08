@@ -323,6 +323,11 @@ footer {
   border-radius: 10px;
   margin-bottom: 1rem;
 }
+.category-card:nth-child(1) .card-img,
+.category-card:nth-child(2) .card-img {
+  height: 150px;
+}
+
 
 
 
