@@ -405,6 +405,20 @@ footer {
   display: block;
   margin: 1rem auto;
 }
+.testimonial {
+  text-align: center;
+  font-style: italic;
+  margin-top: 1rem;
+  color: #333;
+}
+
+.testimonial span {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: #555;
+}
+
 
 
 
