@@ -362,6 +362,27 @@ footer {
   border-radius: 50%;
   animation: confettiFall 3s ease-out forwards;
 }
+@keyframes confettiFall {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(600px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  animation: confettiFall 3s ease-out forwards;
+  z-index: 9999;
+}
+
 
 
 
