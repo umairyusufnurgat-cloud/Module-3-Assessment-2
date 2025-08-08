@@ -1,0 +1,238 @@
+/* Restaurant Menu App Styles */
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #ff6b35;
+    color: white;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    color: #ff6b35;
+}
+
+.categories {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.categories ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.categories li {
+    background: white;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.categories li:hover {
+    transform: translateY(-5px);
+}
+
+.categories a {
+    color: #ff6b35;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.item-details {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin: 2rem auto;
+    max-width: 600px;
+}
+
+.item-details img {
+    width: 100%;
+    max-width: 400px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.item-details h2 {
+    margin-bottom: 1rem;
+}
+
+.item-details p {
+    margin-bottom: 0.5rem;
+}
+
+.extras-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.extras-list li {
+    margin-bottom: 0.5rem;
+}
+
+.extras-list label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.extras-list input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin: 1rem 0;
+}
+
+button {
+    background-color: #ff6b35;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff8e53;
+}
+
+.thank-you {
+    text-align: center;
+    padding: 3rem 0;
+    background: linear-gradient(135deg, #ff6b35, #ff8e53);
+    color: white;
+    border-radius: 10px;
+    margin: 2rem auto;
+    max-width: 600px;
+}
+
+.thank-you h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.thank-you p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.thank-you a {
+    background-color: #fff;
+    color: #ff6b35;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s;
+}
+
+.thank-you a:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* Make bruschetta image smaller in starters category */
+.item-card img {
+    width: 70%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 0 auto 1rem auto;
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .categories ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .item-details {
+        padding: 1rem;
+    }
+
+    .item-details img {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .item-details img {
+        height: 150px;
+    }
+}

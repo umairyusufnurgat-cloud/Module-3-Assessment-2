@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Thank You - Delicious Bites</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script>
+        // Parse query string to get category
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get('cat') || 'general';
+
+        // Set wait time based on category
+        function setWaitTime() {
+            let waitTime = '15-20 minutes';
+            if (category === 'drinks') {
+                waitTime = '5-10 minutes';
+            }
+            document.getElementById('waitTime').textContent = waitTime;
+        }
+
+        window.onload = setWaitTime;
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-utensils"></i>
+            <h1>Delicious Bites</h1>
+        </div>
+    </header>
+    <main>
+        <section class="thank-you">
+            <i class="fas fa-check-circle" style="font-size: 4rem; color: #28a745;"></i>
+            <h2>Thank You for Your Order!</h2>
+            <p>Your order has been placed successfully. We will prepare it with love and care.</p>
+            <p>Estimated wait time: <span id="waitTime">15-20 minutes</span></p>
+            <a href="index.html" class="btn">Back to Homepage</a>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Delicious Bites. All rights reserved.</p>
+    </footer>
+</body>
+</html>

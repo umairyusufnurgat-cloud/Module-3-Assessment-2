@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Item - Delicious Bites</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script>
+        // Parse query string
+        const urlParams = new URLSearchParams(window.location.search);
+        const itemId = urlParams.get('id');
+        const category = urlParams.get('cat');
+
+        // Sample data
+        const menuData = {
+            starters: {
+                'bruschetta': {
+                    name: 'Bruschetta',
+                    price: '$6',
+                    serving: '2 pieces',
+                    description: 'Grilled bread topped with fresh tomatoes, garlic, basil, and olive oil.',
+                    extras: ['Extra garlic', 'Cheese', 'Olive oil'],
+                    image: 'bruschetta.jpg'
+                },
+                'stuffed-mushrooms': {
+                    name: 'Stuffed Mushrooms',
+                    price: '$8',
+                    serving: '4 pieces',
+                    description: 'Mushrooms stuffed with cheese and herbs, baked to perfection.',
+                    extras: ['Extra cheese', 'Bacon bits', 'Hot sauce'],
+                    image: 'stuffed-mushrooms.jpg'
+                },
+                'garlic-bread': {
+                    name: 'Garlic Bread',
+                    price: '$5',
+                    serving: '6 slices',
+                    description: 'Toasted bread with garlic butter and parsley.',
+                    extras: ['Extra butter', 'Cheese', 'Parsley'],
+                    image: 'garlic-bread.jpg'
+                }
+            },
+            meals: {
+                'grilled-chicken': {
+                    name: 'Grilled Chicken',
+                    price: '$15',
+                    serving: '1 plate',
+                    description: 'Juicy grilled chicken breast seasoned with herbs and spices.',
+                    extras: ['Extra sauce', 'Side salad', 'Fries'],
+                    image: 'grilled-chicken.jpg'
+                },
+                'beef-steak': {
+                    name: 'Beef Steak',
+                    price: '$20',
+                    serving: '1 plate',
+                    description: 'Tender beef steak cooked to your preference, served with vegetables.',
+                    extras: ['Mushroom sauce', 'Extra cheese', 'Garlic butter'],
+                    image: 'beef-steak.jpg'
+                },
+                'vegetable-pasta': {
+                    name: 'Vegetable Pasta',
+                    price: '$12',
+                    serving: '1 plate',
+                    description: 'Pasta with fresh vegetables and tomato sauce.',
+                    extras: ['Extra cheese', 'Chili flakes', 'Garlic bread'],
+                    image: 'vegetable-pasta.jpg'
+                }
+            },
+            desserts: {
+                'chocolate-cake': {
+                    name: 'Chocolate Cake',
+                    price: '$7',
+                    serving: '1 slice',
+                    description: 'Rich and moist chocolate cake with chocolate frosting.',
+                    extras: ['Whipped cream', 'Ice cream', 'Cherries'],
+                    image: 'chocolate-cake.jpg'
+                },
+                'cheesecake': {
+                    name: 'Cheesecake',
+                    price: '$8',
+                    serving: '1 slice',
+                    description: 'Creamy cheesecake with a graham cracker crust.',
+                    extras: ['Strawberry sauce', 'Whipped cream', 'Blueberries'],
+                    image: 'cheesecake.jpg'
+                },
+                'ice-cream': {
+                    name: 'Ice Cream',
+                    price: '$5',
+                    serving: '2 scoops',
+                    description: 'Vanilla and chocolate ice cream.',
+                    extras: ['Chocolate syrup', 'Sprinkles', 'Nuts'],
+                    image: 'ice-cream.jpg'
+                }
+            },
+            drinks: {
+                'coffee': {
+                    name: 'Coffee',
+                    price: '$3',
+                    serving: '1 cup',
+                    description: 'Freshly brewed coffee.',
+                    extras: ['Milk', 'Sugar', 'Cream'],
+                    image: 'coffee.jpg',
+                    waitTime: '5-10 minutes'
+                },
+                'tea': {
+                    name: 'Tea',
+                    price: '$2.5',
+                    serving: '1 cup',
+                    description: 'Hot black tea.',
+                    extras: ['Lemon', 'Honey', 'Milk'],
+                    image: 'tea.jpg',
+                    waitTime: '5-10 minutes'
+                },
+                'lemonade': {
+                    name: 'Lemonade',
+                    price: '$4',
+                    serving: '1 glass',
+                    description: 'Refreshing lemonade.',
+                    extras: ['Mint', 'Ice', 'Sugar'],
+                    image: 'lemonade.jpg',
+                    waitTime: '5-10 minutes'
+                }
+            }
+        };
+
+        function loadItem() {
+            const item = menuData[category]?.[itemId];
+            if (!item) {
+                document.body.innerHTML = '<h1>Item not found</h1>';
+                return;
+            }
+
+            document.getElementById('itemName').textContent = item.name;
+            document.getElementById('itemPrice').textContent = item.price;
+            document.getElementById('itemServing').textContent = item.serving;
+            document.getElementById('itemDescription').textContent = item.description;
+            document.getElementById('itemImage').src = item.image;
+            document.getElementById('backLink').href = `category.html?cat=${category}`;
+        }
+
+        function placeOrder() {
+            const extras = Array.from(document.querySelectorAll('input[name="extras"]:checked')).map(cb => cb.value);
+            const notes = document.getElementById('notes').value;
+            const waitTime = menuData[category]?.[itemId]?.waitTime || '15-20 minutes';
+            localStorage.setItem('order', JSON.stringify({ item: itemId, category, extras, notes, waitTime }));
+            window.location.href = `thankyou.html?cat=${category}`;
+        }
+
+        window.onload = loadItem;
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-utensils"></i>
+            <h1>Delicious Bites</h1>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a id="backLink" href="category.html?cat=starters">Back to Category</a>
+        </nav>
+    </header>
+    <main>
+        <section class="item-details">
+            <img id="itemImage" src="images/placeholder.jpg" alt="Food Item" />
+            <h2 id="itemName">Item Name</h2>
+            <p><strong>Price:</strong> <span id="itemPrice">$0</span></p>
+            <p><strong>Serving Size:</strong> <span id="itemServing">1 serving</span></p>
+            <p id="itemDescription">Description</p>
+
+            <h3>Extras</h3>
+            <ul id="extrasList">
+                <!-- Extras will be loaded here -->
+            </ul>
+
+            <h3>Special Requests</h3>
+            <textarea id="notes" placeholder="Any special requests..."></textarea>
+
+            <button onclick="placeOrder()">Place Order</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Delicious Bites. All rights reserved.</p>
+    </footer>
+</body>
+</html>
