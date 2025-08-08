@@ -423,6 +423,12 @@ footer {
   height: 80px;
   overflow: hidden;
 }
+.testimonial-box {
+  background: linear-gradient(to right, #fff7e6, #ffe0b2);
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 20px;
+}
 
 .testimonial {
   position: absolute;
@@ -445,6 +451,13 @@ footer {
   40% { opacity: 0; }
   100% { opacity: 0; }
 }
+.testimonial::before {
+  content: "❝";
+  font-size: 1.5rem;
+  margin-right: 5px;
+}
+
+
 
 
 
