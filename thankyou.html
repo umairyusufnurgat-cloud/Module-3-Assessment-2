@@ -42,5 +42,17 @@
     <footer>
         <p>&copy; 2024 Delicious Bites. All rights reserved.</p>
     </footer>
+    <script>
+  for (let i = 0; i < 30; i++) {
+    const confetti = document.createElement('div');
+    confetti.classList.add('confetti');
+    confetti.style.left = Math.random() * 100 + 'vw';
+    confetti.style.backgroundColor = ['#ff6b35', '#ff8e53', '#fff'][Math.floor(Math.random() * 3)];
+    confetti.style.animationDelay = Math.random() * 2 + 's';
+    document.body.appendChild(confetti);
+  }
+</script>
+
 </body>
 </html>
+
