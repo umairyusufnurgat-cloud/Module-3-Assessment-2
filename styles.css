@@ -388,6 +388,12 @@ footer {
 .thank-you h1 {
   animation: bounceIn 1s ease-out;
 }
+.food-icons {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
 
 
 
